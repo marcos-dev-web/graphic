@@ -1,0 +1,77 @@
+#to-move {
+	width: 200px;
+	height: 200px;
+	background: linear-gradient(#acd4ff, #f0eeee);
+	cursor: pointer;
+	border: 1px solid #222;
+	position: relative;
+	user-select: none;
+	-moz-user-select: none;
+}
+
+#to-move > * {
+	user-select: none;
+	-moz-user-select: none;
+}
+
+.show-height,
+.show-width {
+	position: absolute;
+	color: white;
+	pointer-events: none;
+	transition: all 100ms linear;
+}
+
+.show-height {
+	top: 0;
+	left: -60px;
+}
+
+.show-width {
+	left: 0px;
+	top: -30px;
+	transform: translateX(-50%);
+}
+
+#graph {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	z-index: 105;
+	pointer-events: none;
+}
+
+#graph span.rect {
+	position: absolute;
+	width: 10px;
+	height: 100px;
+	top: auto;
+	bottom: 0;
+	background: linear-gradient(red, #ffe34e);
+	//background: #4e8bff;
+	border: 1px solid #333333;
+	pointer-events: none;
+	z-index: 101;
+}
+
+span.line {
+	border: 1px dotted springgreen;
+	position: absolute;
+	left: 0;
+	top: 0;
+	pointer-events: none;
+	transition: all 20ms linear;
+}
+
+#y {
+	width: 1px;
+	height: 100%;
+	z-index: 110;
+}
+
+#x {
+	width: 100%;
+	height: 1px;
+	z-index: 110;
+}
+
