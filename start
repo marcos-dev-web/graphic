@@ -1,0 +1,5 @@
+#!/bin/bash
+
+printf "\e[1;32mOPEN YOUR BROWSER WITH URL: http://localhost:8080\n\n";
+
+python3 -m http.server 8080
