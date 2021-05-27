@@ -9,6 +9,9 @@ const div = document.getElementById("to-move");
 const containerGraph = document.getElementById('graph');
 const viewHeight = document.getElementById("view-height");
 const viewWidth = document.getElementById("view-width");
+const buttonOrder = document.getElementById("order");
+const buttonRegenerate = document.getElementById("regenerate");
+const select = document.getElementById('direction');
 
 function configure() {
 	div.style = `
@@ -18,7 +21,29 @@ function configure() {
 }
 
 configure();
+
 window.onload = () => {
-	plot.init();
+	const data = Array(50).fill(0).map((_, index) => ({
+		p: index,
+		h: 10 + Math.floor(Math.random() * 350),
+	}));
+
+	plot.init(data);
 	move.init(WIDTH_DIV, HEIGHT_DIV, x, y, div, viewHeight, viewWidth, containerGraph);
 }
+
+const order = () => {
+	const dir = select.value;
+	plot.order(dir)
+}
+
+const regenerate = () => {
+	const data = Array(50).fill(0).map((_, index) => ({
+		p: index,
+		h: 10 + Math.floor(Math.random() * 350),
+	}));
+	plot.reset(data);
+}
+
+buttonRegenerate.addEventListener('click', regenerate);
+buttonOrder.addEventListener('click', order)
