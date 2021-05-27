@@ -48,7 +48,6 @@
 	top: auto;
 	bottom: 0;
 	background: linear-gradient(red, #ffe34e);
-	//background: #4e8bff;
 	border: 1px solid #333333;
 	pointer-events: none;
 	z-index: 101;
